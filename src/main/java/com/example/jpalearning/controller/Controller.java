@@ -49,6 +49,7 @@ public class Controller {
 	@GetMapping(value ="/getProductByName/{id}")
 	@ApiOperation(value = "Get product by ID", notes = "This endpoint retrieves a product by its ID.")
 	public ResponseEntity<Optional<Product>> getProdById(@PathVariable(value ="id") Integer prName){
+		
 		Optional<Product> pr = productDao.getProdById(prName);
 		return new ResponseEntity<>(pr,HttpStatus.OK);
 	}
